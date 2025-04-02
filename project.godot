@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="SpaceShooter_new"
-run/main_scene="uid://d4ln7v144dpy6"
+run/main_scene="uid://qf8votey56w7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
