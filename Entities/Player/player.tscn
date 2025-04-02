@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyhhamvmso2r5"]
+
+[ext_resource type="Script" uid="uid://vpx5hkp8kcqr" path="res://Entities/Player/player.gd" id="1_3uyv8"]
+[ext_resource type="Texture2D" uid="uid://j3lf734c2bqu" path="res://Assets/ship_green_stroked.png" id="1_mv1ah"]
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_3uyv8")
+
+[node name="ShipGreenStroked" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_mv1ah")
+
+[node name="playerShip" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="playerShip"]
+polygon = PackedVector2Array(-5, 18, 5, 18, 5, 14, 17, 14, 17, 5, 8, 5, 8, -3, 4, -3, 4, -15, -4, -15, -4, -3, -9, -3, -9, 5, -16, 5, -16, 14, -5, 14)

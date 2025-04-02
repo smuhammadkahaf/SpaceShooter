@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4ln7v144dpy6"]
+
+[ext_resource type="Texture2D" uid="uid://b4w4ny56ssrxh" path="res://Assets/background.png" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://b8edks3s6v0b8" path="res://Assets/horizontal_bar_red.png" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://cyhhamvmso2r5" path="res://Entities/Player/player.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://oo11kg4tdvld" path="res://Entities/EnemySpawner/enemy_spawner.tscn" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://dqhi4ic1hp0iv" path="res://Entities/EnemySpawner/enemy_spawner.gd" id="5_fos0i"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fos0i"]
+a = Vector2(400, 9)
+b = Vector2(-1, 9)
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(200, 300)
+scale = Vector2(0.390625, 0.585938)
+texture = ExtResource("1_glv2v")
+metadata/_edit_lock_ = true
+
+[node name="HorizontalBarRed" type="Sprite2D" parent="."]
+position = Vector2(199.5, 536)
+scale = Vector2(3.08462, 1)
+texture = ExtResource("2_r0du0")
+
+[node name="Player" parent="." instance=ExtResource("2_uu6xs")]
+position = Vector2(197, 518)
+
+[node name="Bullets" type="Node" parent="."]
+
+[node name="enemy" type="Node" parent="."]
+
+[node name="enemySpawner" parent="." instance=ExtResource("4_cm0pq")]
+script = ExtResource("5_fos0i")
+
+[node name="base" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base"]
+position = Vector2(0, 523)
+shape = SubResource("SegmentShape2D_fos0i")
